@@ -45,39 +45,38 @@ class GameBoard:
 		return col
 
 	def get_diagonal(self, row, column, direction="ur", return_form="string"):
-		"""Returns a list containing each element in a diagonal direction starting at the row, column going in the
-		designated direction (ur = up-right, ul = up-left, dr = down-right, dl = down-left.
+		"""Returns a list or string containing each element in a diagonal direction starting at the row, column
+		going in the designated direction (ur = up-right, ul = up-left, dr = down-right, dl = down-left.
 		Default direction is up-right.  return_form designates return type: "list" or default "string" """
-		diagonal = []
+		diagonal = ""
 		if direction.lower() == "dr":
 			# Down Right
 			while row < self.rows and column < self.columns:
-				diagonal.append(self.board[row][column])
+				diagonal += (self.board[row][column])
 				row += 1
 				column += 1
 		elif direction.lower() == "dl":
 			# Down Left
 			while row < self.rows and column >= 0:
-				diagonal.append(self.board[row][column])
+				diagonal += (self.board[row][column])
 				row += 1
 				column -= 1
 		elif direction.lower() == "ul":
 			# Up Left
 			while row >= 0 and column >= 0:
-				diagonal.append(self.board[row][column])
+				diagonal += (self.board[row][column])
 				row -= 1
 				column -= 1
 		else:
 			# Up Right
 			while row >= 0 and column < self.columns:
-				diagonal.append(self.board[row][column])
+				diagonal += (self.board[row][column])
 				row -= 1
 				column += 1
 		if return_form == "list":
-			return diagonal
+			return list(diagonal)
 		else:
-			diagonal_string = ''.join(map(str, diagonal))
-			return diagonal_string
+			return diagonal
 
 
 
