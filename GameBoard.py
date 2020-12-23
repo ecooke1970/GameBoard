@@ -78,8 +78,6 @@ class GameBoard:
 		else:
 			return diagonal
 
-
-
 	def get_position(self, row, column):
 		"""Returns the character stored at the row, column position on the board"""
 		return self.board[row][column]
