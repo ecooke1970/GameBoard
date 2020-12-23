@@ -55,6 +55,18 @@ class GameBoard:
 				diagonal.append(self.board[row][column])
 				row += 1
 				column += 1
+		elif direction.lower() == "dl":
+			# Down Left
+			while row < self.rows and column >= 0:
+				diagonal.append(self.board[row][column])
+				row += 1
+				column -= 1
+		elif direction.lower() == "ul":
+			# Up Left
+			while row >= 0 and column >= 0:
+				diagonal.append(self.board[row][column])
+				row -= 1
+				column -= 1
 		else:
 			# Up Right
 			while row >= 0 and column < self.columns:
