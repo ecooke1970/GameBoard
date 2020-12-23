@@ -37,16 +37,36 @@ def main():
 	print(board_list)
 
 	board_list = board.get_column(1)
-	print("Printing a column from board.")
+	print("Printing a column from board as a list.")
 	print(board_list)
 
-	board_list = board.get_diagonal(8, 0)
-	print("Printing a diagonal up from board")
-	print(board_list)
+	print("")
 
-	board_list = board.get_diagonal(0, 0, 'down')
-	print("Printing a diagonal down from board")
+	board_list = board.get_diagonal(8, 0, 'ur', 'list')
+	print("Printing a diagonal up right from board as a list")
 	print(board_list)
+	print("Printing a diagonal up right from board as a string")
+	print(board.get_diagonal(8, 0, 'ur'))
+
+	board_list = board.get_diagonal(0, 0, 'dr', 'list')
+	print("Printing a diagonal down right from board as a list")
+	print(board_list)
+	print("Printing a diagonal down right from board as a string")
+	print(board.get_diagonal(0, 0, 'dr'))
+
+	board_list = board.get_diagonal(6, 6, 'ul', 'list')
+	print("Printing a diagonal up left from board as a list")
+	print(board_list)
+	print("Printing a diagonal up left from board as a string")
+	print(board.get_diagonal(6, 6, 'ul'))
+
+	board_list = board.get_diagonal(0, 6, 'dl', 'list')
+	print("Printing a diagonal down left from board as a list")
+	print(board_list)
+	print("Printing a diagonal down left from board as a string")
+	print(board.get_diagonal(0, 6, 'dl'))
+
+
 
 
 if __name__ == "__main__":
