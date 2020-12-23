@@ -44,19 +44,24 @@ class GameBoard:
 			col.append(self.board[i][column])
 		return col
 
-	def get_diagonal(self, row, column, direction="up"):
-		"""Returns a list containing each element in a diagonal direction starting at the row, column going in the designated direction to the right.  Default direction is up"""
+	def get_diagonal(self, row, column, direction="ur"):
+		"""Returns a list containing each element in a diagonal direction starting at the row, column going in the
+		designated direction (ur = up-right, ul = up-left, dr = down-right, dl = down-left.
+		Default direction is up-right"""
 		diagonal = []
-		if direction.lower() == "up":
-			while row >= 0 and column < self.columns:
-				diagonal.append(self.board[row][column])
-				row -= 1
-				column += 1
-		else:
+		if direction.lower() == "dr":
+			# Down Right
 			while row < self.rows and column < self.columns:
 				diagonal.append(self.board[row][column])
 				row += 1
 				column += 1
+		else:
+			# Up Right
+			while row >= 0 and column < self.columns:
+				diagonal.append(self.board[row][column])
+				row -= 1
+				column += 1
+
 		return diagonal
 
 	def get_position(self, row, column):
